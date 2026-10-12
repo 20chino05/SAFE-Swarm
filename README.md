@@ -36,8 +36,11 @@ Winter quarter will focus on hardware/software integration,
 coordinated search testing, and the final demonstration.
 
 ## Documentation
-- [Project proposal](docs/proposal.pdf)
-- [Parts list](docs/parts-list.pdf)
+- [Project proposal](Docs/EECS%20159%20-%20Project%20Proposal.pdf): current scope, roles, timeline, and rough parts estimate
+- [System architecture](Docs/architecture.md): planned components, interfaces, and open questions
+- [Tasks](Docs/tasks.md): weekly tasks, owners, and status
+- [Meeting notes](Docs/meeting-notes.md)
+- [All documents](Docs/README.md): also lists two earlier parts-list PDFs, which describe a three-drone concept that no longer matches the proposal
 
 ## Initial Tasks
 - Establish the shared repository
@@ -45,3 +48,5 @@ coordinated search testing, and the final demonstration.
 - Evaluate human-detection models
 - Set up single-drone flight simulation
 - Finalize component selection and budget
+
+Owners and status for each task are in [Docs/tasks.md](Docs/tasks.md).
