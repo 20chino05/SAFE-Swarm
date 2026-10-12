@@ -49,4 +49,4 @@ coordinated search testing, and the final demonstration.
 - Set up single-drone flight simulation
 - Finalize component selection and budget
 
-Owners and status for each task are in [Docs/tasks.md](Docs/tasks.md).
+Owners and status are tracked in [Docs/tasks.md](Docs/tasks.md). Some owners, including the hardware tasks and the parts list and budget, are still to be chosen.
