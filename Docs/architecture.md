@@ -67,10 +67,10 @@ flowchart LR
 | From | To | Data | Status |
 |---|---|---|---|
 | Camera | AI board | Images | Open: how ESP32-CAM images reach the STM32N6 board (see Open questions) |
-| AI board | Mission/communication software | Detection confidence and timestamp | Discussed |
-| Flight controller | Mission/communication software | Position and flight status | Discussed |
-| Mission software | Flight controller | Waypoint assignments | Discussed |
-| Wireless link | Drones and mission coordination | Drone IDs, status, telemetry, detection reports | Discussed |
+| AI board | Mission/communication software | Detection confidence and timestamp | Discuss |
+| Flight controller | Mission/communication software | Position and flight status | Discuss |
+| Mission software | Flight controller | Waypoint assignments | Discuss |
+| Wireless link | Drones and mission coordination | Drone IDs, status, telemetry, detection reports | Discuss |
 | ELRS transmitter | ELRS receiver | Manual control by a safety pilot | Proposal |
 
 ### Detection reports
