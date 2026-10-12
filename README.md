@@ -3,14 +3,16 @@ Search and FInd Emergency Swarm
 
 UCI EECS 159 Senior Design | Fall 2026 – Winter 2027
 
+> **First draft.** The team first meets on October 12, 2026, so nothing here has been agreed yet. The proposal is a hypothetical draft, and its hardware parts are researched candidates, not final choices.
+
 ## Overview
-SAFE-Swarm is a planned two-drone search-and-rescue system.
-Users will specify a search area, and the drones will coordinate
+SAFE-Swarm is a proposed two-drone search-and-rescue system.
+Users would specify a search area, and the drones would coordinate
 search routes, detect humans using onboard AI, and report detections.
 
 ## Current Status
 Concept development and initial setup. Hardware selection,
-software interfaces, and implementation details are being finalized.
+software interfaces, and implementation details are still to be decided.
 
 ## Team
 - Nader Guirguis — Hardware
@@ -20,7 +22,7 @@ software interfaces, and implementation details are being finalized.
 
 Faculty Advisor: Boris Vaisband
 
-## Planned System
+## Proposed System
 - Flight controllers for stabilization and waypoint navigation
 - Onboard AI processing for camera-based human detection
 - Wireless communication for commands, telemetry, and detection reports
@@ -29,18 +31,19 @@ Faculty Advisor: Boris Vaisband
 Exact components and connections remain subject to validation.
 
 ## Development Plan
-Fall quarter will focus on prototype development, AI evaluation,
-communication testing, and simulated navigation.
+In the draft proposal, Fall quarter would focus on prototype
+development, AI evaluation, communication testing, and simulated
+navigation.
 
-Winter quarter will focus on hardware/software integration,
+Winter quarter would focus on hardware/software integration,
 coordinated search testing, and the final demonstration.
 
 ## Documentation
-- [Project proposal](Docs/EECS%20159%20-%20Project%20Proposal.pdf): current scope, roles, timeline, and rough parts estimate
-- [System architecture](Docs/architecture.md): planned components, interfaces, and open questions
-- [Tasks](Docs/tasks.md): weekly tasks, owners, and status
+- [Draft project proposal](Docs/EECS%20159%20-%20Project%20Proposal.pdf): proposed scope, roles, timeline, and rough parts estimate
+- [System architecture](Docs/architecture.md): proposed components, interfaces, and open questions
+- [Tasks](Docs/tasks.md): weekly tasks, proposed owners, and status
 - [Meeting notes](Docs/meeting-notes.md)
-- [All documents](Docs/README.md): also lists two earlier parts-list PDFs, which describe a three-drone concept that no longer matches the proposal
+- [All documents](Docs/README.md): also lists two earlier parts lists, which describe a three-drone concept that differs from the draft proposal
 
 ## Initial Tasks
 - Establish the shared repository
@@ -49,4 +52,4 @@ coordinated search testing, and the final demonstration.
 - Set up single-drone flight simulation
 - Finalize component selection and budget
 
-Owners and status are tracked in [Docs/tasks.md](Docs/tasks.md). Some owners, including the hardware tasks and the parts list and budget, are still to be chosen.
+Proposed owners and status are tracked in [Docs/tasks.md](Docs/tasks.md). Some owners, including the hardware tasks and the parts list and budget, are still to be chosen.
