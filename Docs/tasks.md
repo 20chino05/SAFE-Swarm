@@ -28,8 +28,8 @@ Only mark a task Done when the evidence is linked.
 | Define communication messages and software interfaces | Aaron | Devin | In progress | First draft: [architecture.md](architecture.md). Not yet reviewed by the team. |
 | Set up the AI development environment and select an initial human-detection model | Devin | Aaron | Unknown | |
 | Complete the proposal | Nader or Samuel (pick one) | All | Unknown | See [Proposal cleanup](#proposal-cleanup) below. |
-| Order the STM32N6 development board and camera | Nader or Samuel (pick one) | Devin | Unknown | Check which cameras ST's N6 example supports first (architecture.md, open question 2). |
-| Finalize the BOM (bill of materials) for the IKEA-style drone | Nader or Samuel (pick one) | | Unknown | |
+| Order the STM32N6 development board and camera | Nader or Samuel (pick one) | Devin/Aaron | Unknown | Check which cameras ST's N6 example supports first (architecture.md, open question 2). |
+| Finalize the BOM (bill of materials) for the IKEA-style drone | Nader or Samuel (pick one) | Devin/Aaron | Unknown | |
 
 ## Fall schedule
 
