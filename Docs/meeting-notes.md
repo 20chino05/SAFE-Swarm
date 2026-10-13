@@ -3,8 +3,7 @@
 Advisor check-in: Boris Vaisband, in person, Mondays at 6 PM (tentative).
 
 Add the newest meeting at the top. Copy the template below for each meeting.
-
-
+<!--
 ## YYYY-MM-DD — Team meeting / Advisor check-in
 
 **Attendees:**
@@ -23,10 +22,12 @@ Prof. Vaisband, Aaron, Devin, Nader, Samuel
 | Task | Owner | Due |
 |---|---|---|
 |  |  |  |
+-->
 
-## 2026-10-12 — Weekly check-in
+## 2026-10-12 — Weekly Meeting
 
 **Attendees:**
+Prof. Vaisband, Aaron, Devin, Nader, Samuel
 
 **Suggested agenda (written before the meeting; edit as needed):**
 
@@ -36,6 +37,8 @@ Prof. Vaisband, Aaron, Devin, Nader, Samuel
 4. Hardware: pick one lead per hardware task.
 5. Architecture open questions that need advisor input: see [architecture.md](architecture.md#open-questions), especially where mission coordination runs, the camera path to the STM32N6, and flight authorization.
 6. Week 4 goals for each person.
+
+**Open questions / blockers:**
 
 **Decisions:**
 -
