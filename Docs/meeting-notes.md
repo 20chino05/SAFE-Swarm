@@ -4,10 +4,11 @@ Advisor check-in: Boris Vaisband, in person, Mondays at 6 PM (tentative).
 
 Add the newest meeting at the top. Copy the template below for each meeting.
 
-<!--
+
 ## YYYY-MM-DD — Team meeting / Advisor check-in
 
 **Attendees:**
+Prof. Vaisband, Aaron, Devin, Nader, Samuel
 
 **Completed since last meeting:**
 -
@@ -22,7 +23,6 @@ Add the newest meeting at the top. Copy the template below for each meeting.
 | Task | Owner | Due |
 |---|---|---|
 |  |  |  |
--->
 
 ## 2026-10-12 — Weekly check-in
 
