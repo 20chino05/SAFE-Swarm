@@ -23,8 +23,8 @@ Only mark a task Done when the evidence is linked.
 
 | Task | Owner | Support | Status | Evidence / notes |
 |---|---|---|---|---|
-| Establish the software repository | Aaron | Devin | In progress | Repo created October 12. Proposal and parts lists uploaded. |
-| Add Devin, Nader, and Samuel as repository collaborators | Aaron | | Not started | As of October 12, only the owner account has access. |
+| Establish the software repository | Aaron | Devin | Completed | Repo created October 12. Proposal and parts lists uploaded. |
+| Add Devin, Nader, and Samuel as repository collaborators | Aaron | | Completed | As of October 12, only the owner account has access. |
 | Define communication messages and software interfaces | Aaron | Devin | In progress | First draft: [architecture.md](architecture.md). Not yet reviewed by the team. |
 | Set up the AI development environment and select an initial human-detection model | Devin | Aaron | Unknown | |
 | Complete the proposal | Nader or Samuel (pick one) | All | Unknown | See [Proposal cleanup](#proposal-cleanup) below. |
