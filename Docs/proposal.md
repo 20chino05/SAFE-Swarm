@@ -169,24 +169,3 @@ Possible first checkpoints to discuss (not scheduled):
 
 No advisor feedback on Open Herd yet. Feedback on SAFE-Swarm is in the
 [legacy proposal](../legacy/EECS%20159%20-%20Project%20Proposal.pdf).
-
-## Where This Draft Came From
-
-A brainstorm list, a team chat, and a voice memo, collected October 16, 2026.
-The voice memo was transcribed automatically, so some words were interpreted.
-Check these readings:
-
-| Transcript says | Read as |
-|---|---|
-| "autonomous surgeon rescue" | autonomous search and rescue (the SAFE-Swarm idea) |
-| "flat cameras" | Flock cameras |
-| "SCM 32N6", "STM 32 N6" | STM32N6 |
-| "master producible" | mass-producible |
-| "duffboard", "Devboard" | dev board |
-| "the Q version of the Devboard, not the Discovery" | probably the NUCLEO-N657X0-Q board, not the STM32N6570-DK Discovery kit (confirm) |
-| "Captain Persia" | unclear; not used |
-| "seaside 2" | CSI-2 (MIPI camera interface) |
-| "to detect and or to try to protect this person" | probably "to detect this person" |
-| "no flag" | probably "a flag" (an alert) |
-| "Your coach" | unclear; the point seems to be that someone with access could misuse the cameras |
-| "It does have a camera" / "The camera we will buy using funding from the school" | these conflict; the parts list treats the camera as still to buy (confirm) |
