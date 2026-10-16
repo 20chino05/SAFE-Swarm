@@ -1,18 +1,39 @@
-# SAFE-Swarm
-Search and FInd Emergency Swarm
+# Open Herd
+
+Privacy-first camera nodes with onboard AI
 
 UCI EECS 159 Senior Design | Fall 2026 – Winter 2027
 
+> **Day-0 draft (October 16, 2026).** The team just switched from SAFE-Swarm to Open Herd.
+> Everything here is a starting point for discussion. Nothing is agreed yet.
+
 ## Overview
-SAFE-Swarm is a planned two-drone search-and-rescue system.
-Users will specify a search area, and the drones will coordinate
-search routes, detect humans using onboard AI, and report detections.
+
+Open Herd is a proposed standalone camera device ("node") that runs AI on the device itself.
+Several nodes could work together as a group.
+
+The main idea is privacy: video would be processed on the node and then discarded.
+No footage would be stored or sent anywhere. Only small results would leave the node,
+such as an alert when something matches or a count of people or cars.
+The plan is to make it open source.
+
+The same hardware could run different software for different uses. Ideas so far:
+
+- A privacy-first security alert, as an alternative to networked police cameras such as Flock
+- Crowd safety at venues such as games and concerts
+- Counting foot or vehicle traffic
+
+Which one becomes the demo hasn't been decided.
 
 ## Current Status
-Concept development and initial setup. Hardware selection,
-software interfaces, and implementation details are being finalized.
+
+Day 0 of the switch. According to the team's notes, one STM32N6 development board has been
+bought. Everything else is still being planned.
 
 ## Team
+
+Roles are carried over from SAFE-Swarm and may change.
+
 - Nader Guirguis — Hardware
 - Samuel Malak — Hardware
 - Devin Mccaw — Software
@@ -20,33 +41,9 @@ software interfaces, and implementation details are being finalized.
 
 Faculty Advisor: Boris Vaisband
 
-## Planned System
-- Flight controllers for stabilization and waypoint navigation
-- Onboard AI processing for camera-based human detection
-- Wireless communication for commands, telemetry, and detection reports
-- Mission software for search-area input and coordinated route assignment
+## Documents
 
-Exact components and connections remain subject to validation.
-
-## Development Plan
-Fall quarter will focus on prototype development, AI evaluation,
-communication testing, and simulated navigation.
-
-Winter quarter will focus on hardware/software integration,
-coordinated search testing, and the final demonstration.
-
-## Documentation
-- [Project proposal](Docs/EECS%20159%20-%20Project%20Proposal.pdf): current scope, roles, timeline, and rough parts estimate
-- [System architecture](Docs/architecture.md): planned components, interfaces, and open questions
-- [Tasks](Docs/tasks.md): weekly tasks, owners, and status
+- [Draft proposal](Docs/proposal.md): the idea, use cases, phases, and open questions
+- [Draft parts list](Docs/parts-list.md): what's bought, what's needed, and options to research
 - [Meeting notes](Docs/meeting-notes.md)
-- [All documents](Docs/README.md): also lists two earlier parts-list PDFs, which describe a three-drone concept that no longer matches the proposal
-
-## Initial Tasks
-- Establish the shared repository
-- Document system architecture and communication interfaces
-- Evaluate human-detection models
-- Set up single-drone flight simulation
-- Finalize component selection and budget
-
-Owners and status for each task are in [Docs/tasks.md](Docs/tasks.md).
+- [Legacy: SAFE-Swarm](legacy/README.md): the original drone project, archived October 16, 2026
