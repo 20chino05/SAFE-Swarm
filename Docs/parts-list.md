@@ -1,7 +1,7 @@
 # Open Herd – Draft Parts List (v0)
 
 > **Day-0 draft (October 16, 2026).** Built from the team's brainstorm hardware list and voice memo.
-> Only the STM32N6 board is reported as bought. Everything else is a need, not a choice.
+> Only the STM32N6 board is reported as bought. Everything else is a need, not a choice. (Pay Samuel lol)
 > Prices are left blank until someone looks them up.
 
 **Status values:** **Bought** · **To buy** (need is clear, part not chosen) · **To research** · **Maybe**
