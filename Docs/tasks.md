@@ -30,13 +30,13 @@ Only mark a task Done when the evidence is linked.
 
 | Task | Owner | Support | Status | Evidence / notes |
 |---|---|---|---|---|
-| Establish the software repository | Aaron | Devin | In progress | Repo created October 12. Draft proposal and earlier parts lists uploaded. |
-| Add Devin, Nader, and Samuel as repository collaborators | Aaron | | Not started | As of October 12, only the owner account (20chino05) is a collaborator, so only it can push. The repo is public, so anyone can view it. |
+| Establish the software repository | Aaron | Devin | Completed | Repo created October 12. Draft proposal and earlier parts lists uploaded. |
+| Add Devin, Nader, and Samuel as repository collaborators | Aaron | | Completed | Marked completed October 12. |
 | Define communication messages and software interfaces | Aaron | Devin | In progress | First draft: [architecture.md](architecture.md). Not yet reviewed by the team. |
 | Set up the AI development environment and select an initial human-detection model | Devin | Aaron | Unknown | |
 | Complete the proposal | Nader or Samuel (team to pick one) | All | Unknown | See suggested edits in [Proposal cleanup](#proposal-cleanup) below. |
-| Order the STM32N6 development board and camera | Nader or Samuel (team to pick one) | Devin | Unknown | Check which cameras ST's N6 example supports first (architecture.md, open question 2). |
-| Finalize the BOM (bill of materials) for the IKEA-style drone | Nader or Samuel (team to pick one) | | Unknown | |
+| Order the STM32N6 development board and camera | Nader or Samuel (team to pick one) | Devin/Aaron | Unknown | Check which cameras ST's N6 example supports first (architecture.md, open question 2). |
+| Finalize the BOM (bill of materials) for the IKEA-style drone | Nader or Samuel (team to pick one) | Devin/Aaron | Unknown | |
 
 ## Fall schedule (from the draft proposal)
 

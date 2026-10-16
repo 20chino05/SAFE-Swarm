@@ -5,11 +5,11 @@
 Advisor check-in listed in the draft proposal: Boris Vaisband, in person, Mondays at 6 PM (tentative).
 
 Add the newest meeting at the top. Copy the template below for each meeting.
-
 <!--
 ## YYYY-MM-DD — Team meeting / Advisor check-in
 
 **Attendees:**
+Prof. Vaisband, Aaron, Devin, Nader, Samuel
 
 **Completed since last meeting:**
 -
@@ -26,9 +26,10 @@ Add the newest meeting at the top. Copy the template below for each meeting.
 |  |  |  |
 -->
 
-## 2026-10-12 — First team meeting
+## 2026-10-12 — Weekly Meeting
 
 **Attendees:**
+Prof. Vaisband, Aaron, Devin, Nader, Samuel
 
 **Suggested topics to discuss (written before the meeting; edit as needed):**
 
@@ -38,6 +39,8 @@ Add the newest meeting at the top. Copy the template below for each meeting.
 4. Hardware: whether to pick one lead per hardware task.
 5. Architecture open questions (see [architecture.md](architecture.md#open-questions)): where mission coordination would run and how camera images would reach the STM32N6 (for the team to decide), and flight authorization (likely needs advisor input; it comes from the earlier parts lists, not the draft proposal).
 6. Goals for each person before the next meeting. The draft proposal's Week 4 software items and Week 5 hardware items could be a starting point.
+
+**Open questions / blockers:**
 
 **Decisions:**
 -
