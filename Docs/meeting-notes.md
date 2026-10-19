@@ -27,7 +27,7 @@ Earlier meetings, from SAFE-Swarm, are in [legacy/meeting-notes.md](../legacy/me
 
 ## 2026-10-19 — Advisor check-in
 
-**Attendees:**
+**Attendees:** Prof. Vaisband, Aaron, Devin, Nader, Samuel
 
 **Advisor feedback:**
 - Narrow the scope: build several identical camera units (same hardware, same setup) that talk to each other over a network and control themselves as a swarm.
