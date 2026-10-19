@@ -21,7 +21,7 @@ Add them to the version you submit.
 
 **Faculty advisor:** Boris Vaisband
 
-**Weekly check-in:** in person, Mondays (the latest proposal says 11 AM; earlier notes said 6 PM; confirm)
+**Weekly check-in:** in person, Mondays (the team's Google Doc proposal says 11 AM; earlier notes said 6 PM; confirm)
 
 ## Updated Summary of Chosen Project
 
@@ -35,7 +35,8 @@ demo below is how we plan to show that.
 
 What we want the design to stand for:
 
-- **Modular.** The same unit runs different software for different jobs. Security is the demo;
+- **Modular and open.** The same unit runs different software for different jobs, and the plan is
+  still to make it open source. Security is the demo;
   crowd monitoring and traffic counting are examples of later jobs.
 - **Onboard decisions.** Each unit decides on its own when to track, where to turn, and when to
   hand off, following the advisor's October 19 advice to favor onboard processing over a central
@@ -47,10 +48,10 @@ What we want the design to stand for:
 ### The problem (draft)
 
 A single security camera loses a person the moment they walk out of its view, and someone then has
-to piece together footage from several cameras to follow what happened. Doing that tracking
-automatically on a central computer means sending every camera's video there to be analyzed.
-Open Herd tries to do the tracking on the cameras themselves, with each one handing the person off
-to the next.
+to piece together footage from several cameras to follow what happened. In Open Herd, the cameras
+make the tracking and handoff decisions themselves, each one passing the person to the next. The
+central station only records, so the handoff is meant to keep working even if the recording side is
+busy or stopped.
 
 ### Proposed approach (draft)
 
@@ -63,14 +64,17 @@ to the next.
 5. **Hand off:** when the person leaves its view, the unit messages the neighbor on that side:
    "person heading your way."
 6. **Pick up:** the neighbor turns toward that direction, picks up the person who appears there,
-   replies that it has taken over, and warns its own neighbors in turn.
+   replies that it has taken over. With a third unit (a should-have), it would warn its own
+   neighbors in turn.
 7. **Record:** each unit's video goes to a central station (a team laptop) that records it and keeps
    a log of every trigger and handoff.
 
+The must-have demo covers this flow with two units.
+
 Confirming that the neighbor picked up the *same* person by appearance (re-identification, which
-uses clothing and build, not faces) is planned as the first addition once the basic handoff works.
-ST's re-identification example supports our exact board, but ST has only shown it working within a
-single camera.
+compares overall appearance such as clothing; it isn't face recognition) is planned as the first addition once the basic handoff works.
+ST's re-identification example supports the NUCLEO-N657X0-Q, the board the team reports buying, but
+ST has only shown it working within a single camera.
 
 ### Use cases
 
@@ -81,7 +85,7 @@ The hardware stays the same across uses, and only the software changes.
 | Security and anti-theft swarm | Track a suspicious person and hand them off between cameras | **The demo** (chosen October 19) |
 | Crowd monitoring | Count people in each camera's view and share the counts to spot bottlenecks | A later job for the same hardware |
 | Traffic counting | Summarize foot or vehicle traffic | A later job for the same hardware |
-| Plate alerts, drone piggyback | Ideas from earlier drafts | Out of scope for this project |
+| Plate alerts; drone piggyback (the same unit carried on a drone) | Ideas from earlier drafts | Set aside for now |
 
 ### Swarm behavior
 
@@ -90,7 +94,8 @@ For this project, "swarm" means the units coordinate with each other directly:
 - Each unit knows its neighbors and which edge of its view leads to which neighbor.
 - A unit that loses a person out the side tells that neighbor, which turns and gets ready before the
   person arrives.
-- Handoffs chain from unit to unit, and a unit that doesn't answer is flagged so the others carry on.
+- With three or more units, handoffs chain from unit to unit, and a unit that doesn't answer is
+  flagged so the others carry on.
 
 At the October 19 check-in, the advisor suggested reading up on swarm systems and working out an
 algorithm for how the units coordinate on their own. That reading may change this design.
@@ -113,8 +118,8 @@ The units decide what to do. The central station only records.
 Template instructions: break milestones into weekly tasks, and assign each task to one
 responsible member (split shared tasks into sub-tasks).
 
-**Phase 1: dev board prototype (V0).** Use the STM32N6 development board (NUCLEO-N657X0-Q) the
-team bought, plus a camera bought with school funding. The hardware plan uses ESP32 boards the
+**Phase 1: dev board prototype (V0).** Use the STM32N6 development board the team reports buying
+(NUCLEO-N657X0-Q, to be confirmed), plus a camera to be bought with school funding. The hardware plan uses ESP32 boards the
 team already has for messages between units.
 
 **Phase 2: custom board (V1).** Design the team's own PCB around the STM32N6. The goal is a board
@@ -125,7 +130,7 @@ Areas of work. Leads are still to be assigned.
 | Area | What it covers | Likely side (from current roles) | Lead |
 |---|---|---|---|
 | Dev board setup | Get the STM32N6 board running and build ST's example apps | Hardware and software | TBD |
-| Camera | Buy a color camera ST supports and get images on the board | Hardware | TBD |
+| Camera | Choose and buy a camera ST supports (color likely suits appearance matching) and get images on the board | Hardware | TBD |
 | Detection and tracking | Find and track people on the unit, building on ST's re-identification example | Software | TBD |
 | Triggers | Detect loitering in a zone; later, a simple "item removed" check | Software | TBD |
 | Pan/tilt follow | Turn the camera to keep the person in view (**new hardware, see disclaimers**) | Hardware and software | TBD |
@@ -140,35 +145,44 @@ Areas of work. Leads are still to be assigned.
 These come from the October 19 use case. The hardware team decides all of them.
 
 - **Pan/tilt mount.** Each unit would need a pan/tilt mount with two small servos. Kits seen online
-  run about $11–19 (snapshots, not checked at checkout). Only the camera board would move, so the
-  camera's ribbon cable would flex with every move.
+  run about $11.50–19 (snapshots, not checked at checkout). The software plan assumes only the camera
+  board moves, so its ribbon cable would flex with every move. The hardware team decides the mounting.
 - **Servo power.** Servos are usually powered from their own 5 V supply (about $8) that shares a
   ground with the board, rather than from the board itself.
-- **Every unit needs its own camera.** The Nucleo most likely ships without one. A color camera
-  probably suits appearance matching better than the black-and-white option.
+- **Every unit needs its own board and camera.** Only one board is reported bought, and it most
+  likely shipped without a camera. A two-unit handoff needs a second board (~$75) and two cameras;
+  a chain needs three of each. A color camera probably suits appearance matching better than the
+  black-and-white option.
 - **Video to the central station.** Short messages between units fit on ESP-NOW, but video
-  doesn't. The simplest V0 option is ST's built-in USB webcam output to a laptop, which keeps units
-  within about 5 m of it. The Nucleo's Ethernet port or Wi-Fi are options for longer distances.
+  doesn't. The simplest V0 option is the USB webcam output from ST's example app (320x240) into a
+  laptop, which keeps units within about 5 m of it. Whether two units can stream into one laptop at
+  once still has to be tested. The Nucleo's Ethernet port or Wi-Fi are options for longer distances.
 - **LoRa.** With ESP-NOW handling messages and USB, Ethernet, or Wi-Fi handling video, LoRa may not
   be needed. It could still serve as a backup alert link.
 - **The custom board (V1).** For this use case, V1 would likely need a servo header, a 5 V servo
-  supply, and a radio or Ethernet. That makes the ~$100-per-unit target harder.
-- **Cost.** The added parts raise the rough Phase 1 estimate to about $155–190 per unit (more if
-  LoRa is kept). This ties into the advisor's October 12 note to watch costs.
+  supply, and a radio or Ethernet. That makes the hardware plan's ~$100-per-unit V1 target harder.
+- **Where the demo runs.** The software schedule assumes the end-of-Winter demo runs on dev boards
+  (V0), with running everything on the custom board as a software stretch goal. The hardware timeline
+  (schematic draft in Week 5, a working V0 and V1 ordered by Week 10, Winter integration on the
+  custom board) stays as the hardware team wrote it.
+- **Cost.** The added parts put the rough Phase 1 estimate at about $160–190 per unit with a color
+  camera, before power parts, cables, the case, tax, and shipping (more if LoRa is kept). This ties
+  into the advisor's October 12 note to watch costs.
 
 ## Rough Parts List
 
-See the [draft parts list](parts-list.md). In short: the STM32N6 board is bought. Each unit still
-needs a camera, a pan/tilt mount with servos, and a servo power supply, plus an ESP32 for messages.
+See the [draft parts list](parts-list.md). In short: one STM32N6 board is reported bought. Each unit
+needs its own board and camera. If the hardware team goes with this use case, each unit would also
+need a pan/tilt mount with servos and a servo supply, plus an ESP32 for messages (some are on hand).
 The central station can be a team laptop.
 
 ## Estimated Deliverables at Major Milestones
 
-**Does this fit our time?** Yes, a scaled-down version fits, but with little slack. With about
-6 hours per person per week, software has roughly 148 hands-on hours across Fall and Winter. The
-must-have work below is estimated at about 135–140 hours, including extra time for learning. It
-only fits if we build on ST's existing example for our board, freeze the must-have list, and have
-cameras by about Fall Week 6 and pan/tilt kits by Week 7. All hour figures are estimates.
+**Does this fit our time?** Probably, if we scale it down, and with little slack. At about 6 hours
+per person per week, software has an estimated 148 hands-on hours across Fall and Winter after
+meetings and write-ups. The must-have work below is estimated at about 135–145 hours, including extra
+time for learning. It only fits if we build on ST's existing example for our board, freeze the
+must-have list, and have cameras by about Fall Week 6 and pan/tilt kits by Week 7.
 
 **Scope tiers**
 
@@ -179,14 +193,14 @@ cameras by about Fall Week 6 and pan/tilt kits by Week 7. All hour figures are e
   chain handoff; a simple "item removed" theft trigger; a recording viewer with automatic deletion
   and an access log; full measurements (frame rate, handoff delay, success rate).
 - **Stretch:** video over Ethernet or Wi-Fi; AI-based theft detection; running everything on the
-  custom board within Winter; using the camera board's extra sensors (motion and distance), in
-  response to the advisor's "add sensors" note.
+  custom board within Winter; using the extra sensors on ST's B-CAMS-IMX camera bundle (an IMU and a
+  distance sensor), if that camera is chosen, in response to the advisor's "add sensors" note.
 
 **Software plan (estimates)**
 
 - **Fall Weeks 4–5:** install ST's tools and build its re-identification example; write the
-  message format between units; get two ESP32s talking over ESP-NOW; submit the IRB self-check
-  with the advisor.
+  message format between units; get two ESP32s talking over ESP-NOW; submit the ZOT IRB
+  self-determination with the advisor.
 - **Fall Weeks 6–7:** camera running with person tracking on the board; servo control and a basic
   follow; the link from the board to its ESP32; the handoff state logic.
 - **Fall Weeks 8–10:** a smoother follow; a first version of the central station that records and
@@ -200,13 +214,15 @@ cameras by about Fall Week 6 and pan/tilt kits by Week 7. All hour figures are e
   report.
 
 **Plan B:** if the two-unit handoff isn't working by Winter Week 4, drop every should-have and
-finish the must-haves. If the custom board isn't ready, the demo runs on dev boards. This follows
+finish the must-haves. The software plan already targets dev boards for the demo, so a late custom
+board doesn't block it. This follows
 the advisor's October 12 note to have a backup plan.
 
 ## Open Questions
 
 - **Swarm algorithm:** What coordination approach do we use? (October 19 action: read up on swarm systems.)
-- **Sensors:** Which extra sensors, if any? The camera board ST sells includes motion and distance sensors.
+- **Sensors:** Which extra sensors, if any? One of ST's camera bundles (B-CAMS-IMX) includes an IMU and
+  a distance sensor; we haven't checked whether ST's examples for our board use them.
 - **Onboard vs. central:** The advisor favors onboard processing. Is recording at a central station
   still okay, or should units keep their own clips?
 - **Theft:** Is a simple "item removed from a zone" check enough, or does the demo need real theft detection?
@@ -215,12 +231,16 @@ the advisor's October 12 note to have a backup plan.
 - **Video link:** USB to a laptop for V0, or Ethernet or Wi-Fi? (Hardware decision.)
 - **Units:** How many units can the budget cover: two for a handoff, or three for a chain?
 - **Cameras:** Stock varies by store, and one listed a very long lead time. Order early from a store that shows real stock.
-- **IRB and recording rules:** Testing on people likely needs a UCI IRB self-registration first.
-  No microphones, because California requires all-party consent to record conversations.
+- **Location:** Do units need GPS, or is each unit's position and neighbor list set at install?
+- **IRB and recording rules:** Testing on people likely needs a ZOT IRB self-determination (with the
+  advisor) first. No microphones: California requires all-party consent to record confidential
+  conversations (Penal Code 632). This is general information, not legal advice.
 - **Check-in time:** Monday at 11 AM or 6 PM?
 
 ## Additional Comments / Advisor Feedback
 
+- **Earlier comments (in the proposal):** interesting idea, keep planning; make a rough timeline,
+  initial budget, and task breakdown (done).
 - **October 12 (first meeting):** watch the costs so the budget doesn't balloon, and have a backup
   plan because the project is complex.
 - **October 19:** narrow the scope to identical camera units that coordinate as a swarm; read up on

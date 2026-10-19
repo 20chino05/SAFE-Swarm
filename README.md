@@ -11,7 +11,8 @@ UCI EECS 159 Senior Design | Fall 2026 – Winter 2027
 
 Open Herd is about modular hardware and AI: one camera unit, built on the STM32N6 chip, that runs
 its AI on the unit itself and can be reprogrammed for different jobs. Several identical units (same
-hardware, same setup) talk to each other and coordinate on their own, as a swarm.
+hardware, same setup) talk to each other and coordinate on their own, as a swarm. The plan is still
+to make it open source.
 
 Our demo is property security and anti-theft:
 
@@ -20,7 +21,7 @@ Our demo is property security and anti-theft:
    and turns to keep them in view. Spotting theft directly is a harder, later goal.
 3. As the person walks out of view, the camera tells the neighbor on that side, which turns toward
    that direction and picks the person up.
-4. The result is one continuous track across the property, so the target isn't lost between cameras.
+4. The result is one continuous track across the property, so the target is less likely to be lost between cameras.
 
 The units make the decisions themselves, not a central computer. A central station (a team laptop)
 only records the video and logs events. We also plan no face recognition and no audio, and the
@@ -30,7 +31,7 @@ The same hardware could later be reprogrammed for other jobs, such as crowd moni
 
 ## Current Status
 
-Planning. One STM32N6 development board has been bought. The team narrowed the scope on
+Planning. According to the team's notes, one STM32N6 development board has been bought. The team narrowed the scope on
 October 19, and the [proposal](Docs/proposal.md#estimated-deliverables-at-major-milestones)
 lays out what we think fits in the time we have.
 
